@@ -67,7 +67,7 @@ springSecurityJWT
 ```
 **3. JWT 비밀키 생성 (필요시)**
 
-[키 생성 클래스](springSecurityJWT/security/SecretKeyGenerator.java)의 main() 메서드 실행하여 생성
+[키 생성 클래스](/src/main/java/springSecurityJWT/security/SecretKeyGenerator.java)의 main() 메서드 실행하여 생성
 ```java
 SecretKey key = Jwts.SIG.HS512.key().build();
 String encodedSecretKey = Encoders.BASE64URL.encode(key.getEncoded());
