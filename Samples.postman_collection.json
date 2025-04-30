@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"username\":\"test_username11\",\n    \"password\":\"1234\",\n    \"userNickname\":\"test_user_nickname\"}",
+					"raw": "{\n    \"username\":\"test_username\",\n    \"password\":\"1234\",\n    \"userNickname\":\"test_user_nickname\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -32,33 +32,7 @@
 					]
 				}
 			},
-			"response": [
-				{
-					"name": "Default",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{url}}/status",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"status"
-							]
-						}
-					},
-					"code": 200,
-					"_postman_previewlanguage": null,
-					"header": null,
-					"cookie": [],
-					"body": "Response OK"
-				}
-			]
+			"response": []
 		},
 		{
 			"name": "본인 조회",
@@ -68,7 +42,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0Iiwicm9sZSI6IlVTRVIiLCJuaWNrbmFtZSI6Iu2FjOyKpO2KuOycoOyggCIsImVuYWJsZWQiOnRydWUsImlhdCI6MTc0NTMwNDQzNywiZXhwIjoxNzQ1MzA0NDk3fQ.MtxV09P9udX3Wj-7tMYXcytxxtgChiWSwJ9AjiJljBwrxMOGX8ouByAgiDNuMtpDQWWhryaUulh1wryzptv0VA",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0X3VzZXJuYW1lIiwicm9sZSI6IlVTRVIiLCJuaWNrbmFtZSI6InRlc3RfdXNlcl9uaWNrbmFtZSIsImVuYWJsZWQiOnRydWUsImlhdCI6MTc0NTk4NjEwNSwiZXhwIjoxNzQ1OTg3MDA1fQ.dZ5m1KE-lN_gjY_dIfVRegT4Y1f1Y-3ZG_q6LwRjqGp_cbqMEDmcPbotSmhMlp9-LoxZC4nYNQQaISFziX-0Vg",
 							"type": "string"
 						}
 					]
@@ -83,11 +57,12 @@
 					}
 				],
 				"url": {
-					"raw": "{{url}}/users/who-am-i",
+					"raw": "{{url}}/api/users/who-am-i",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
+						"api",
 						"users",
 						"who-am-i"
 					]
@@ -134,7 +109,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "{{jwtToken}}",
+							"value": "",
 							"type": "string"
 						}
 					]
@@ -143,7 +118,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"username\": \"test11\",\n    \"password\": \"1234\",\n    \"userNickname\": \"1\",\n    \"userRole\": \"user\"\n}",
+					"raw": "{\n    \"username\": \"test1\",\n    \"password\": \"1234\",\n    \"userNickname\": \"1\",\n    \"userRole\": \"user\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -151,11 +126,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/users",
+					"raw": "{{url}}/api/users",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
+						"api",
 						"users"
 					]
 				}
@@ -169,10 +145,19 @@
 				"header": [
 					{
 						"key": "X-CSRF-Token",
-						"value": "a36cc079-f87a-48c1-a28f-caf6ebc497d1",
+						"value": "cb179fb9-d1bc-4adc-9a5f-8e8684a6edb7",
 						"type": "text"
 					}
 				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "{{url}}/api/auth/refresh",
 					"host": [
@@ -182,6 +167,35 @@
 						"api",
 						"auth",
 						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "로그아웃",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0X3VzZXJuYW1lIiwicm9sZSI6IlVTRVIiLCJuaWNrbmFtZSI6InRlc3RfdXNlcl9uaWNrbmFtZSIsImVuYWJsZWQiOnRydWUsImlhdCI6MTc0NTk4NjEwNSwiZXhwIjoxNzQ1OTg3MDA1fQ.dZ5m1KE-lN_gjY_dIfVRegT4Y1f1Y-3ZG_q6LwRjqGp_cbqMEDmcPbotSmhMlp9-LoxZC4nYNQQaISFziX-0Vg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/auth/logout",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"logout"
 					]
 				}
 			},
