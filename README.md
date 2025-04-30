@@ -12,8 +12,6 @@
 * Spring Web, Validation, JPA
 * Lombok
 
---- 
-
 ## 주요 기능
 
 #### 인증(Authentication)
@@ -29,9 +27,6 @@
 * 사용자 인증 기반 접근 제어
 * @PreAuthorize 기반 권한 검증
 * ADMIN Role 전용 사용자 생성 API
-
---- 
-
 
 ## 디렉토리 구조
 ```
